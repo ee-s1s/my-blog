@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إسماعيل طه فايع |  Developer Django &amp; CCNA Network Engineer</title>
+    <meta name="description" content="إسماعيل طه فايع - مطور  Django ومهندس شبكات CCNA. أبني تطبيقات ويب متكاملة وأنظمة شبكات احترافية." />
+    <meta name="keywords" content=", Django, Python, CCNA, شبكات, مطور باك إند, Network Engineer, صنعاء, اليمن" />
+    <meta name="author" content="إسماعيل طه إسماعيل فايع" />
+    <meta property="og:title" content="إسماعيل طه فايع |  Django &amp; CCNA Network Engineer" />
+    <meta property="og:description" content="أحول الأفكار إلى تطبيقات ويب وشبكات مستقرة. مطور  Django ومهندس شبكات معتمد CCNA." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/ee-s1s" />
+
+    <title>إسماعيل طه فايع |  Developer & CCNA Network Engineer</title>
+
+    <!-- 1. الخط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- 2. الايقونات - رابط واحد فقط شغال -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+
+    <style>
+        /* ============================================================
+                   ROOT VARIABLES & RESET
+                   ============================================================ */
+        :root {
+            --bg-primary: #0A0E1A;
+            --bg-secondary: #111827;
+            --bg-card: #111827;
+            --bg-card-hover: #1A2332;
+            --bg-input: #1A2332;
+            --border-color: #1E293B;
+            --border-light: #2D3A4F;
+            --text-primary: #E5E7EB;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --accent: #3B82F6;
+            --accent-hover: #2563EB;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --accent-glow-strong: rgba(59, 130, 246, 0.25);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.6);
+            --font: 'Cairo', sans-serif;
+            --max-width: 1200px;
+            --header-height: 72px;
+            --section-padding: 60px 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            padding-top: var(--header-height);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ============================================================
+                   SCROLLBAR
+                   ============================================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-hover);
+        }
+
+        /* ============================================================
+                   GLASS UTILITY
+                   ============================================================ */
+        .glass {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(30, 41, 59, 0.5);
+        }
+
+        .glass-light {
+            background: rgba(17, 24, 39, 0.55);
+            backdrop-filter: blur(12px) saturate(160%);
+            -webkit-backdrop-filter: blur(12px) saturate(160%);
+            border: 1px solid rgba(30, 41, 59, 0.35);
+        }
+
+        /* ============================================================
+                   HEADER
+                   ============================================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            z-index: 1050;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(18px) saturate(180%);
+            -webkit-backdrop-filter: blur(18px) saturate(180%);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.4);
+            transition: background var(--transition), border-color var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .header.scrolled {
+            background: rgba(10, 14, 26, 0.96);
+            border-bottom-color: rgba(59, 130, 246, 0.15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .logo .accent {
+            color: var(--accent);
+        }
+        .logo .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 2px;
+            box-shadow: 0 0 12px var(--accent-glow-strong);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+            position: relative;
+            padding: 4px 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2.5px;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width var(--transition);
+            box-shadow: 0 0 12px var(--accent-glow-strong);
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            transition: background var(--transition);
+        }
+        .hamburger:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ============================================================
+                   SECTIONS COMMON
+                   ============================================================ */
+        section {
+            padding: var(--section-padding);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.3);
+            position: relative;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+        .section-label i {
+            font-size: 0.7rem;
+        }
+        .section-label .line {
+            width: 32px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .section-sub {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 620px;
+            line-height: 1.8;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+        .section-header.centered {
+            text-align: center;
+        }
+        .section-header.centered .section-sub {
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+                   HERO
+                   ============================================================ */
+        .hero {
+            min-height: calc(100vh - var(--header-height));
+            display: flex;
+            align-items: center;
+            padding: 60px 0 80px;
+            border-bottom: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-waves {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 180px;
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .hero-waves svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            padding: 6px 18px 6px 22px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            width: fit-content;
+        }
+        .hero-badge .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        .hero h1 .highlight {
+            color: var(--accent);
+            position: relative;
+        }
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            right: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--accent);
+            opacity: 0.15;
+            border-radius: 6px;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            line-height: 1.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: var(--font);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .btn-primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 24px var(--accent-glow);
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px var(--accent-glow-strong);
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            border-color: var(--border-light);
+            color: var(--text-secondary);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            background: rgba(59, 130, 246, 0.05);
+        }
+        .btn-icon {
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            border-radius: 60px;
+            flex-shrink: 0;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-code-block {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-code-block::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.03), transparent 60%);
+            pointer-events: none;
+        }
+        .hero-code-block .dots {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+        .hero-code-block .dots span {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2D3A4F;
+        }
+        .hero-code-block .dots span:nth-child(1) {
+            background: #EF4444;
+        }
+        .hero-code-block .dots span:nth-child(2) {
+            background: #F59E0B;
+        }
+        .hero-code-block .dots span:nth-child(3) {
+            background: #10B981;
+        }
+        .hero-code-block pre {
+            font-family: 'Cairo', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 2;
+            direction: ltr;
+            text-align: left;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .hero-code-block pre .kw {
+            color: #60A5FA;
+        }
+        .hero-code-block pre .fn {
+            color: #34D399;
+        }
+        .hero-code-block pre .str {
+            color: #FBBF24;
+        }
+        .hero-code-block pre .cmt {
+            color: #6B7280;
+        }
+        .hero-code-block pre .var {
+            color: #F472B6;
+        }
+
+        /* ============================================================
+                   ABOUT
+                   ============================================================ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .about-text p strong {
+            color: var(--text-primary);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px 18px;
+            text-align: center;
+            transition: all var(--transition);
+        }
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .stat-card .number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+            line-height: 1.2;
+        }
+        .stat-card .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* ============================================================
+                   SKILLS (Accordion)
+                   ============================================================ */
+        .skills-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        .accordion-item:hover {
+            border-color: var(--border-light);
+        }
+        .accordion-item.open {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            cursor: pointer;
+            user-select: none;
+            transition: background var(--transition);
+            gap: 16px;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: right;
+            font-family: var(--font);
+            color: var(--text-primary);
+        }
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .accordion-header .left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .accordion-header .left i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            width: 28px;
+            text-align: center;
+        }
+        .accordion-header .left span {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .accordion-header .icon-toggle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: transform var(--transition);
+        }
+        .accordion-item.open .accordion-header .icon-toggle {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+            padding: 0 24px;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 600px;
+            padding: 0 24px 24px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 4px;
+        }
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.06);
+            border: 1px solid rgba(59, 130, 246, 0.08);
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all var(--transition);
+        }
+        .skill-tag:hover {
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--text-primary);
+            border-color: rgba(59, 130, 246, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* ============================================================
+                   SERVICES
+                   ============================================================ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 30px 24px;
+            transition: all var(--transition);
+            text-align: center;
+        }
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            background: var(--bg-card-hover);
+        }
+        .service-card .icon {
+            font-size: 2.4rem;
+            color: var(--accent);
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+        .service-card h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ============================================================
+                   CERTIFICATIONS
+                   ============================================================ */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .cert-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 32px 28px;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 0 4px 4px 0;
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+        .cert-card:hover::before {
+            opacity: 1;
+        }
+        .cert-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .cert-card .icon {
+            font-size: 2.6rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .cert-card h4 {
+            font-size: 1.15rem;
+            font-weight: 900;
+        }
+        .cert-card .org {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .cert-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .cert-card .badge {
+            display: inline-block;
+            margin-top: 10px;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            padding: 2px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* ============================================================
+                   CONTACT
+                   ============================================================ */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .contact-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px 22px;
+            transition: all var(--transition);
+        }
+        .contact-item:hover {
+            border-color: var(--accent);
+            transform: translateX(-4px);
+        }
+        .contact-item .icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(59, 130, 246, 0.06);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .contact-item .info .label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .contact-item .info .value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 32px 30px;
+        }
+        .contact-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .contact-form .form-group {
+            margin-bottom: 18px;
+        }
+        .contact-form .form-group.full {
+            grid-column: 1 / -1;
+        }
+        .contact-form label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-family: var(--font);
+            font-size: 0.95rem;
+            transition: all var(--transition);
+            outline: none;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .contact-form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .form-success {
+            display: none;
+            margin-top: 16px;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            color: #34D399;
+            font-weight: 600;
+            text-align: center;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        .form-success.show {
+            display: flex;
+        }
+
+        .map-container {
+            margin-top: 20px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            display: block;
+            filter: grayscale(0.3) invert(0.9) hue-rotate(180deg);
+        }
+
+        /* ============================================================
+                   FOOTER
+                   ============================================================ */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        .footer-col p,
+        .footer-col li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 6px;
+        }
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-col .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .footer-col .social-links a {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            transition: all var(--transition);
+        }
+        .footer-col .social-links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .footer-bottom strong {
+            color: var(--text-secondary);
+        }
+
+        /* ============================================================
+                   REVEAL ANIMATION
+                   ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.08s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.16s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.24s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.32s;
+        }
+
+        /* ============================================================
+                   RESPONSIVE
+                   ============================================================ */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content {
+                align-items: center;
+            }
+            .hero-desc {
+                max-width: 100%;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-badge {
+                margin: 0 auto;
+            }
+            .hero-code-block {
+                max-width: 100%;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .certs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 64px;
+                --section-padding: 48px 0;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: var(--header-height);
+                right: 0;
+                left: 0;
+                background: rgba(10, 14, 26, 0.98);
+                backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--border-color);
+                padding: 24px 28px;
+                gap: 16px;
+                border-radius: 0 0 var(--radius-md) var(--radius-md);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-code-block {
+                padding: 20px 16px;
+            }
+            .hero-code-block pre {
+                font-size: 0.7rem;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            .stat-card {
+                padding: 16px 12px;
+            }
+            .stat-card .number {
+                font-size: 1.6rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form .form-row {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-card:last-child {
+                grid-column: 1 / -1;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .contact-form {
+                padding: 20px 16px;
+            }
+            .cert-card {
+                padding: 24px 18px;
+            }
+        }
+
+        /* ============================================================
+                   REDUCED MOTION
+                   ============================================================ */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+            .hero-code-block .dots span {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header class="header" id="header" role="banner" aria-label="الرأس">
+        <div class="container">
+            <a href="#home" class="logo" aria-label="الصفحة الرئيسية">
+                <span class="accent">إسماعيل</span> فايع
+                <span class="dot"></span>
+            </a>
+
+            <nav aria-label="القائمة الرئيسية">
+                <ul class="nav-links" id="navLinks" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem" class="active">الرئيسية</a></li>
+                    <li role="none"><a href="#about" role="menuitem">من أنا</a></li>
+                    <li role="none"><a href="#skills" role="menuitem">المهارات</a></li>
+                    <li role="none"><a href="#services" role="menuitem">الخدمات</a></li>
+                    <li role="none"><a href="#certifications" role="menuitem">الشهادات</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">تواصل</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO
+    ============================================================ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-waves" aria-hidden="true">
+            <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+                <path d="M0,60 C360,160 720,0 1080,80 C1260,120 1380,100 1440,80 L1440,180 L0,180 Z"
+                fill="rgba(59,130,246,0.08)" />
+                <path d="M0,100 C300,40 600,140 900,80 C1200,20 1380,80 1440,60 L1440,180 L0,180 Z"
+                fill="rgba(59,130,246,0.05)" />
+                <path d="M0,130 C240,80 480,170 720,110 C960,50 1200,130 1440,100 L1440,180 L0,180 Z"
+                fill="rgba(59,130,246,0.03)" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+
+                <h1 id="hero-title">
+                    أحول الأفكار إلى
+                    <span class="highlight">تطبيقات ويب</span>
+                    وشبكات مستقرة
+                </h1>
+
+                <p class="hero-desc">
+                    أتخصص في بناء تطبيقات ويب متكاملة باستخدام <strong>Django</strong>، <strong>Python</strong>،
+                    <strong>REST APIs</strong> و <strong></strong>. إلى جانب ذلك أعمل على تصميم
+                    وتنفيذ وإدارة شبكات <strong>Cisco</strong>. حاصل على شهادات <strong>CCNA</strong>
+                    و <strong>ITE</strong> و <strong>ICDL</strong>.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> تواصل معي
+                    </a>
+                    <a href="https://github.com/ee-s1s" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-icon" aria-label="GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:esmialtaha1100@gmail.com" class="btn btn-outline btn-icon" aria-label="البريد الإلكتروني">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="tel:+967773190225" class="btn btn-outline btn-icon" aria-label="الهاتف">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-code-block glass">
+                    <div class="dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <pre><span class="cmt"># -*- coding: utf-8 -*-</span>
+                        <span class="kw">from</span> django <span class="kw">import</span> <span class="fn">apps</span>
+                        <span class="kw">from</span> netmiko <span class="kw">import</span> <span class="fn">ConnectHandler</span>
+
+                        <span class="kw">class</span> <span class="fn">BackendEngineer</span>(<span class="fn">Dev</span>):
+                        <span class="var">    name</span> = <span class="str">"إسماعيل طه"</span>
+                        <span class="var">    skills</span> = [<span class="str">"Django"</span>, <span class="str">"REST APIs"</span>, <span class="str">"CCNA"</span>]
+
+                        <span class="kw">def</span> <span class="fn">build_solution</span>():
+                        <span class="kw">    return</span> <span class="str">"تطبيقات ويب وشبكات مستقرة"</span></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+        ABOUT
+        ============================================================ -->
+        <section id="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <span class="line"></span>
+                        من أنا
+                    </div>
+                    <h2 class="section-title" id="about-title">نبذة عني</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            <strong>إسماعيل طه إسماعيل فايع</strong> — مطور <strong>Django</strong>
+                            ومهندس شبكات معتمد <strong>CCNA</strong>. أتخصص في بناء تطبيقات ويب متكاملة
+                            باستخدام Django، REST APIs و Python. إلى جانب ذلك أعمل على تصميم
+                            وتنفيذ وإدارة شبكات Cisco. حاصل على شهادات <strong>CCNA</strong> و <strong>ITE</strong>
+                            و <strong>ICDL</strong> وأسعى لتقديم حلول تقنية مستقرة وآمنة.
+                        </p>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-card reveal reveal-delay-1">
+                            <span class="number">+3</span>
+                            <span class="label">شهادات معتمدة</span>
+                        </div>
+                        <div class="stat-card reveal reveal-delay-2">
+                            <span class="number">مبتدئ</span>
+                            <span class="label">سنوات الخبرة</span>
+                        </div>
+                        <div class="stat-card reveal reveal-delay-3">
+                            <span class="number">عند الطلب</span>
+                            <span class="label">مشاريع مكتملة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+        SKILLS (Accordion)
+        ============================================================ -->
+        <section id="skills" aria-labelledby="skills-title" style="background: rgba(17,24,39,0.3);">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-label">
+                        <i class="fas fa-cogs" aria-hidden="true"></i>
+                        <span class="line"></span>
+                        قدراتي
+                    </div>
+                    <h2 class="section-title" id="skills-title">المهارات التقنية</h2>
+                    <p class="section-sub">مجموعة المهارات التي أمتلكها وأطورها باستمرار.</p>
+                </div>
+
+                <div class="skills-accordion" id="skillsAccordion">
+                    <!-- 1. Django & Backend (مفتوح افتراضياً) -->
+                    <div class="accordion-item open">
+                        <button class="accordion-header" aria-expanded="true">
+                            <span class="left">
+                                <i class="fas fa-server" aria-hidden="true"></i>
+                                <span>Django &amp; Backend</span>
+                            </span>
+                            <span class="icon-toggle"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="skill-tags">
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">REST APIs</span>
+                                <span class="skill-tag">DRF (Django Rest Framework)</span>
+                                <span class="skill-tag">ORM</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Tools & Workflow -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="left">
+                                <i class="fas fa-tools" aria-hidden="true"></i>
+                                <span>Tools &amp; Workflow</span>
+                            </span>
+                            <span class="icon-toggle"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">Django Admin</span>
+                                <span class="skill-tag">Debugging</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Networking (CCNA) -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="left">
+                                <i class="fas fa-wifi" aria-hidden="true"></i>
+                                <span>Networking (CCNA)</span>
+                            </span>
+                            <span class="icon-toggle"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="skill-tags">
+                                <span class="skill-tag">Cisco CCNA</span>
+                                <span class="skill-tag">Routing</span>
+                                <span class="skill-tag">Switching</span>
+                                <span class="skill-tag">VLAN</span>
+                                <span class="skill-tag">Subnetting</span>
+                                <span class="skill-tag">WAN / LAN</span>
+                                <span class="skill-tag">Network Troubleshooting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. IT Support & Systems -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="left">
+                                <i class="fas fa-desktop" aria-hidden="true"></i>
+                                <span>IT Support &amp; Systems</span>
+                            </span>
+                            <span class="icon-toggle"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
+                        </button>
+                        <div class="accordion-body">
+                            <div class="skill-tags">
+                                <span class="skill-tag">Windows</span>
+                                <span class="skill-tag">Linux Basics</span>
+                                <span class="skill-tag">Hardware Maintenance</span>
+                                <span class="skill-tag">OS Installation</span>
+                                <span class="skill-tag">Troubleshooting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+        SERVICES
+        ============================================================ -->
+        <section id="services" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-label">
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        <span class="line"></span>
+                        خدماتي
+                    </div>
+                    <h2 class="section-title" id="services-title">ما أقدمه</h2>
+                    <p class="section-sub">خدمات تقنية متكاملة في تطوير الباك إند والشبكات.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card reveal reveal-delay-1">
+                        <div class="icon"><i class="fas fa-cubes" aria-hidden="true"></i></div>
+                        <h4>تطوير تطبيقات ويب بـ Django</h4>
+                        <p>بناء تطبيقات ويب متكاملة باستخدام Django مع واجهات برمجة تطبيقات RESTful وقواعد بيانات قوية.</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-2">
+                        <div class="icon"><i class="fas fa-code-branch" aria-hidden="true"></i></div>
+                        <h4>تصميم APIs و تكامل الأنظمة</h4>
+                        <p>تصميم وبناء APIs باستخدام Django Rest Framework وربطها مع خدمات و تطبيقات خارجية.</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-3">
+                        <div class="icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+                        <h4>إعداد وصيانة شبكات Cisco</h4>
+                        <p>تصميم وتنفيذ وإدارة شبكات Cisco تشمل التوجيه، التبديل، VLANs، واستكشاف الأعطال.</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-4">
+                        <div class="icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+                        <h4>الدعم الفني وصيانة الأجهزة</h4>
+                        <p>صيانة أجهزة الحاسوب، تثبيت أنظمة التشغيل، وحل المشكلات البرمجية والأجهزة بكفاءة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+        CERTIFICATIONS
+        ============================================================ -->
+        <section id="certifications" aria-labelledby="certs-title" style="background: rgba(17,24,39,0.3);">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-label">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <span class="line"></span>
+                        اعتمادات
+                    </div>
+                    <h2 class="section-title" id="certs-title">الشهادات</h2>
+                    <p class="section-sub">شهادات معتمدة تعكس الكفاءة التقنية والاحترافية.</p>
+                </div>
+
+                <div class="certs-grid">
+                    <div class="cert-card reveal reveal-delay-1">
+                        <div class="icon"><i class="fab fa-cisco" aria-hidden="true"></i></div>
+                        <h4>CCNA</h4>
+                        <span class="org">Cisco Certified Network Associate</span>
+                        <p>شهادة معتمدة في أساسيات الشبكات، التوجيه والتبديل، وتأمين البيانات.</p>
+                        <span class="badge">Routing &amp; Switching</span>
+                    </div>
+                    <div class="cert-card reveal reveal-delay-2">
+                        <div class="icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+                        <h4>ITE</h4>
+                        <span class="org">Cisco IT Essentials</span>
+                        <p>شهادة في صيانة العتاد والبرمجيات والدعم الفني لأنظمة التشغيل.</p>
+                        <span class="badge">Hardware &amp; Software</span>
+                    </div>
+                    <div class="cert-card reveal reveal-delay-3">
+                        <div class="icon"><i class="fas fa-desktop" aria-hidden="true"></i></div>
+                        <h4>ICDL</h4>
+                        <span class="org">الرخصة الدولية لقيادة الحاسوب</span>
+                        <p>مهارات استخدام حزمة برامج المكتب وإدارة البيانات والملفات بكفاءة.</p>
+                        <span class="badge">Computer Literacy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+        CONTACT
+        ============================================================ -->
+        <section id="contact" aria-labelledby="contact-title" style="background: rgba(17,24,39,0.2);">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-label">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span class="line"></span>
+                        تواصل
+                    </div>
+                    <h2 class="section-title" id="contact-title">تواصل معي</h2>
+                    <p class="section-sub">أرسل رسالتك وسأرد عليك في أقرب وقت ممكن.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <p>يمكنك التواصل معي عبر القنوات التالية أو عبر النموذج المجاور.</p>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                            <div class="info">
+                                <div class="label">البريد الإلكتروني</div>
+                                <div class="value"><a href="mailto:esmialtaha1100@gmail.com">esmialtaha1100@gmail.com</a></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+                            <div class="info">
+                                <div class="label">الهاتف</div>
+                                <div class="value"><a href="tel:+967773190">967773190225+</a></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fab fa-github" aria-hidden="true"></i></div>
+                            <div class="info">
+                                <div class="label">GitHub</div>
+                                <div class="value"><a href="https://github.com/ee-s1s" target="_blank" rel="noopener noreferrer">github.com/ee-s1s</a></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                            <div class="info">
+                                <div class="label">الموقع</div>
+                                <div class="value">صنعاء، اليمن</div>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15410.538292892047!2d44.19172385!3d15.3694451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1602f2b1f0c7c6b3%3A0x7f7a7f7a7f7a7f7a!2z2YXYs9i52YUg2KfZhNiq2LXYp9mG!5e0!3m2!1sar!2sye!4v1700000000000"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="موقع صنعاء، اليمن"
+                        aria-label="خريطة موقع صنعاء، اليمن">
+                    </iframe>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/esmialtaha1100@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="formName">الاسم</label>
+                        <input type="text" id="formName" name="name" placeholder="أدخل اسمك" required aria-required="true" />
+                    </div>
+                    <div class="form-group">
+                        <label for="formEmail">البريد الإلكتروني</label>
+                        <input type="email" id="formEmail" name="email" placeholder="بريدك الإلكتروني" required aria-required="true" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="formSubject">الموضوع</label>
+                    <input type="text" id="formSubject" name="subject" placeholder="موضوع الرسالة" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                    <label for="formMessage">الرسالة</label>
+                    <textarea id="formMessage" name="message" placeholder="اكتب رسالتك هنا..." required aria-required="true"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i> إرسال الرسالة
+                </button>
+
+                <div class="form-success" id="formSuccess" role="status">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+FOOTER
+============================================================ -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>إسماعيل طه فايع</h4>
+                <p>مطور Django ومهندس شبكات CCNA. أبني تطبيقات ويب متكاملة وأنظمة شبكات احترافية.</p>
+                <div class="social-links">
+                    <a href="https://github.com/ee-s1s" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:esmialtaha1100@gmail.com" aria-label="البريد الإلكتروني">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="tel:+967773190225" aria-label="الهاتف">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من أنا</a></li>
+                    <li><a href="#skills">المهارات</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#certifications">الشهادات</a></li>
+                    <li><a href="#contact">تواصل</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>الخدمات</h4>
+                <ul>
+                    <li><a href="#services">تطوير تطبيقات Django</a></li>
+                    <li><a href="#services">تصميم APIs</a></li>
+                    <li><a href="#services">إعداد شبكات Cisco</a></li>
+                    <li><a href="#services">الدعم الفني</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>تواصل</h4>
+                <ul>
+                    <li><i class="fas fa-envelope" aria-hidden="true" style="margin-left:8px;color:var(--accent);"></i> esmialtaha1100@gmail.com</li>
+                    <li><i class="fas fa-phone-alt" aria-hidden="true" style="margin-left:8px;color:var(--accent);"></i>967773190225+</li>
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-left:8px;color:var(--accent);"></i> صنعاء، اليمن</li>
+                    <li><i class="fab fa-github" aria-hidden="true" style="margin-left:8px;color:var(--accent);"></i> <a href="https://github.com/ee-s1s" target="_blank" rel="noopener noreferrer">github.com/ee-s1s</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <strong>إسماعيل طه إسماعيل فايع</strong>. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================
+SCHEMA JSON-LD
+============================================================ -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "إسماعيل طه إسماعيل فايع",
+        "jobTitle": " Django Developer & CCNA Network Engineer",
+        "url": "https://github.com/ee-s1s",
+        "email": "esmialtaha1100@gmail.com",
+        "telephone": "+967773190225",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "صنعاء",
+            "addressCountry": "اليمن"
+        },
+        "sameAs": [
+            "https://github.com/ee-s1s"
+        ],
+        "knowsAbout": [
+            "Django", "Python", "REST APIs", "ORM",
+            "Git", "GitHub", "CCNA", "Routing", "Switching",
+            "VLAN", "Subnetting", "Network Security", "Windows",
+            "Linux", "Hardware Maintenance"
+        ],
+        "hasCredential": [{
+            "@type": "EducationalOccupationalCredential",
+            "name": "CCNA - Cisco Certified Network Associate"
+        }, {
+            "@type": "EducationalOccupationalCredential",
+            "name": "ITE - Cisco IT Essentials"
+        }, {
+            "@type": "EducationalOccupationalCredential",
+            "name": "ICDL - International Computer Driving License"
+        }]
+    }
+</script>
+
+<!-- ============================================================
+JAVASCRIPT
+============================================================ -->
+<script>
+    (function() {
+        'use strict';
+
+        // ============================================================
+        // PROTECTION: منع النقر الأيمن، التحديد، النسخ
+        // ============================================================
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('❌ المحتوى محمي.');
+            return false;
+        });
+
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('❌ المحتوى محمي.');
+            return false;
+        });
+
+        // ============================================================
+        // PROTECTION: منع أدوات المطور (F12, Ctrl+U, Ctrl+Shift+I, Ctrl+S)
+        // ============================================================
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                alert('⚠️ أدوات المطور مغلقة.');
+                return false;
+            }
+            // Ctrl+U
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                alert('⚠️ عرض المصدر غير متاح.');
+                return false;
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) {
+                e.preventDefault();
+                alert('⚠️ أدوات المطور مغلقة.');
+                return false;
+            }
+            // Ctrl+S
+            if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                alert('⚠️ حفظ الصفحة غير مسموح.');
+                return false;
+            }
+            // Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) {
+                e.preventDefault();
+                alert('⚠️ الكونسول مغلق.');
+                return false;
+            }
+            // Ctrl+Shift+C (Inspect Element)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'c' || e.key === 'C')) {
+                e.preventDefault();
+                alert('⚠️ الفحص غير متاح.');
+                return false;
+            }
+        });
+
+        // منع النقر الأيمن على الصور والروابط أيضاً
+        document.querySelectorAll('img, a').forEach(function(el) {
+            el.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                alert('❌ المحتوى محمي.');
+                return false;
+            });
+        });
+
+        // ============================================================
+        // HEADER SCROLL EFFECT
+        // ============================================================
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // ============================================================
+        // HAMBURGER
+        // ============================================================
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', function() {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            hamburger.innerHTML = isOpen ?
+                '<i class="fas fa-times" aria-hidden="true"></i>' :
+                '<i class="fas fa-bars" aria-hidden="true"></i>';
+        });
+
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+            });
+        });
+
+        // ============================================================
+        // ACTIVE NAV LINK
+        // ============================================================
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = navLinks.querySelectorAll('a');
+
+        function updateActiveNav() {
+            let current = '';
+            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navAnchors.forEach(function(anchor) {
+                anchor.classList.remove('active');
+                if (anchor.getAttribute('href') === '#' + current) {
+                    anchor.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        window.addEventListener('load', updateActiveNav);
+
+        // ============================================================
+        // ACCORDION
+        // ============================================================
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(function(item) {
+            const headerBtn = item.querySelector('.accordion-header');
+
+            headerBtn.addEventListener('click', function() {
+                const isOpen = item.classList.contains('open');
+
+                accordionItems.forEach(function(other) {
+                    other.classList.remove('open');
+                    other.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    headerBtn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ============================================================
+        // SCROLL REVEAL
+        // ============================================================
+        const revealEls = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealEls.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // ============================================================
+        // CONTACT FORM
+        // ============================================================
+        const form = document.getElementById('contactForm');
+        const successMsg = document.getElementById('formSuccess');
+
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const name = document.getElementById('formName').value.trim();
+                const email = document.getElementById('formEmail').value.trim();
+                const subject = document.getElementById('formSubject').value.trim();
+                const message = document.getElementById('formMessage').value.trim();
+
+                if (!name || !email || !subject || !message) {
+                    e.preventDefault();
+                    alert('⚠️ يرجى ملء جميع الحقول.');
+                    return;
+                }
+
+                if (!email.includes('@') || !email.includes('.')) {
+                    e.preventDefault();
+                    alert('⚠️ يرجى إدخال بريد إلكتروني صحيح.');
+                    return;
+                }
+
+                e.preventDefault();
+                successMsg.classList.add('show');
+
+                setTimeout(function() {
+                    form.submit();
+                }, 600);
+            });
+        }
+
+        // ============================================================
+        // SMOOTH SCROLL
+        // ============================================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offset = parseInt(getComputedStyle(document.documentElement)
+                        .getPropertyValue('--header-height')) || 72;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset - 10;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ============================================================
+        // KEYBOARD: Close menu on Escape
+        // ============================================================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+                hamburger.focus();
+            }
+        });
+
+        // ============================================================
+        // منع Ctrl+A (تحديد الكل)
+        // ============================================================
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'a' || e.key === 'A')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+    })();
+</script>
+
+</body>
+</html>
